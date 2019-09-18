@@ -1,0 +1,9 @@
+<form class="lexicon-form" [formGroup]="lexiconForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="lexicon-full-width">
+    <input matInput placeholder="Lexicon word" name="lexiconName" formControlName="lexiconName">
+  </mat-form-field>
+  <mat-form-field class="lexicon-full-width">
+    <input matInput placeholder="Lexicon value" name="lexiconValue" formControlName="lexiconValue">
+  </mat-form-field>
+  <button type="submit" mat-button color="primary" [disabled]="!lexiconForm.valid">Update lexicon!</button>
+</form>

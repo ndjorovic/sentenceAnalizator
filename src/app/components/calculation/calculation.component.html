@@ -1,0 +1,9 @@
+<div class="calculation-container">
+    <div class="calculation-form">
+        <mat-form-field class="calculation-full-width">
+            <input matInput placeholder="Enter sentence" [formControl]="sentence">
+        </mat-form-field>
+        <button mat-button color="primary" (click)="submintSentence()">Analize sentence!</button>
+    </div>
+    Your sentence has value: {{sentenceValue}}
+</div>

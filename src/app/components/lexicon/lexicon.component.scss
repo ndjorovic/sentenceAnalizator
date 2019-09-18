@@ -1,0 +1,42 @@
+.lexicon-container {
+  height: auto;
+  padding: 50px;
+  .lexicon-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    button {
+      align-self: flex-end;
+    }
+    .error{
+      color: red;
+    }
+  }
+  .lexicon-full-width {
+    width: 100%;
+  }
+  .lexicon-list {
+    list-style: none;
+    margin: 50px 0;
+    padding: 0;
+    li {
+      display: flex;
+      align-content: center;
+      font-size: 18px;
+      .positive{
+        color: green;
+      }
+      .negative{
+        color: red;
+      }
+    }
+    .actions{
+      margin-left: 50px;
+      mat-icon{
+        cursor: pointer;
+      }
+    }
+  }
+}

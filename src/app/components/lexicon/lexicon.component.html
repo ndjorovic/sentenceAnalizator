@@ -1,0 +1,37 @@
+<div class="lexicon-container">
+
+  <form class="lexicon-form" [formGroup]="lexiconForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="lexicon-full-width">
+      <input matInput placeholder="Lexicon word" name="lexiconName" formControlName="lexiconName">
+    </mat-form-field>
+    <mat-form-field class="lexicon-full-width">
+      <input matInput placeholder="Lexicon value" name="lexiconValue" formControlName="lexiconValue">
+    </mat-form-field>
+    <button mat-button color="primary" type="submit" [disabled]="!lexiconForm.valid">Create lexicon!</button>
+    <p class="error"> {{errorText}}</p>
+
+  </form>
+  <hr>
+  <span>lexicon list</span>
+  <p>
+    Filter:
+    <mat-button-toggle-group>
+      <mat-button-toggle value="bold" (click)="lexiconFilter('all')">All</mat-button-toggle>
+      <mat-button-toggle value="bold" (click)="lexiconFilter('positive')">Positive</mat-button-toggle>
+      <mat-button-toggle value="italic" (click)="lexiconFilter('negative')">Negative</mat-button-toggle>
+    </mat-button-toggle-group>
+  </p>
+  <ul class="lexicon-list">
+    <li *ngFor="let lexicon of lexiconWords; let i = index">
+      <span
+        [ngClass]="{'positive': lexicon.lexiconValue > 0, 'negative': lexicon.lexiconValue < 0}">{{lexicon.lexiconName}}
+        {{lexicon.lexiconValue}}</span>
+      <div class="actions">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="deleteLexicon(i)">delete</mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="updateLexicon(i)">edit</mat-icon>
+      </div>
+    </li>
+
+  </ul>
+
+</div>

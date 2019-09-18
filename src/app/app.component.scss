@@ -1,0 +1,24 @@
+
+
+.container {
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  box-orient: horizontal;
+}
+
+.nav {
+  background:#585857;;
+  width: 20%;
+  box-flex:  0;  
+}
+
+
+.main {
+  background: #fff;
+  box-flex: 1; 
+  width: 80% 
+}
